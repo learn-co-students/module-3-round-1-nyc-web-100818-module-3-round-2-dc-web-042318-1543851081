@@ -41,28 +41,3 @@ class Beer {
 }
 
 Beer.all = []
-
-
-// When I click a beer name, the application should reveal more information about that particular beer.
-// See the example above for the additional information that should be displayed.
-//
-// * **Route:** GET `http://localhost:3000/beers/:id`
-//
-// The beer details should be added to this div
-//
-// ```html
-// <div id="beer-detail">
-//
-// </div>
-// ```
-// The html should look something like:
-//
-// ```html
-// <h1>Beer Name</h1>
-// <img src="<add beer img url here>">
-// <h3>Beer Tagline</h3>
-// <textarea>Beer Description</textarea>
-// <button id="edit-beer" class="btn btn-info">
-//   Save
-// </button>
-// ```
