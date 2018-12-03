@@ -21,6 +21,14 @@ class JSONAPIAdapter {
     })
   }
 
+  post(data) {
+    return this._request(this.baseURI,{
+      method: 'POST',
+      headers: this.defaultHeaders,
+      body: JSON.stringify(data)
+    })
+  }
+
   _request(endpoint, options) {
     return fetch(endpoint, options)
       .then(r => {

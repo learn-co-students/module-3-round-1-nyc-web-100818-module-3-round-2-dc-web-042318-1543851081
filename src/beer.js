@@ -14,9 +14,7 @@ class Beer {
 
   updateDescription(description) {
     this.description = description
-    return Beer.adapter.patch(this.id, {
-      description: description
-    })
+    return Beer.adapter.patch(this.id, { description: description })
   }
 
   renderDetail() {
@@ -31,6 +29,27 @@ class Beer {
 
   renderListItem() {
     return `<li style="cursor: pointer;" data-id="${this.id}" class="list-group-item">${this.name}</li>`
+  }
+
+  static sortBy(key) {
+    Beer.all.sort((a,b) => {
+      if (a[key] < b[key]) {
+        return -1
+      } else if (a[key] > b[key]) {
+        return 1
+      } else {
+        return 0
+      }
+    })
+  }
+  
+  static create(beerObj) {
+    return Beer.adapter.post(beerObj)
+      .then(beerObj => new Beer(beerObj))
+  }
+
+  static findOrCreate(beerObj) {
+    return Beer.all.find(b => b.id == beerObj.id) || Beer.create(beerObj)
   }
 
   static find(id) {
@@ -50,7 +69,13 @@ class Beer {
       })
       .catch(console.error)
   }
+
+  static populateFromRemoteAPI() {
+    return Beer.remoteAdapter.getRandom()
+      .then(beerObj => Beer.findOrCreate(beerObj[0]))
+  }
 }
 
 Beer.all = []
 Beer.adapter = new JSONAPIAdapter('http://localhost:3000/beers')
+Beer.remoteAdapter = new PunkAPIAdapter()
