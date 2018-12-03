@@ -13,7 +13,11 @@ const editApi = (beer, beerDescription) => {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      description: beerDescription
+      description: beerDescription,
     })
   })
+}
+
+const blastBeer = (beer) => {
+  fetch(`http://localhost:3000/beers/${beer.id}`, { method: 'DELETE'})
 }

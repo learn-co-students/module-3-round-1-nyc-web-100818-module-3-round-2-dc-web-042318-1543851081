@@ -20,6 +20,7 @@ class Beer {
     this.foodPairing = beer.food_pairing;
     this.brewersTips = beer.brewers_tips;
     this.contributedBy = beer. contributed_by;
+    this.quantity = Math.ceil((Math.random()) * 10)
     dataStore.beerz.push(this);
   }
 }
