@@ -30,7 +30,7 @@ class Beer {
       <h1>${this.name}</h1>
       <img src=${this.image_url}
       <h3>${this.tagline}</h3>
-      <textarea>${this.description}</textarea>
+      <textarea data-description="${this.id}">${this.description}</textarea>
       <button id="edit-beer" class="btn btn-info" data-id="${this.id}" data-action="edit">
         Save
       </button>
