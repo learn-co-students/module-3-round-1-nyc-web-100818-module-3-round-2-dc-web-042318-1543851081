@@ -21,9 +21,21 @@
       </ul>
     </div>
 
-    <div class='col-md-8'>
-      <h2>Beer Detail</h2>
-      <div id="beer-detail">
+    <h2>Beer Detail</h2>
+
+    <div class='col-md-8' style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-around;">
+      <div id="beer-detail" style="width: 50%; display: flex;
+      flex-direction: row; flex-wrap: wrap; justify-content: center; margin: 20px;">
+      </div>
+      <div class="form">
+        <h1>edit form:</h1>
+        <form id="edit-beer-form" style="display: flex;
+        flex-direction: column;" action="index.html" method="POST">
+          <label for="description">beer description: </label>
+          <input id="edit-input" type="text" name="description" value="">
+          <br>
+          <button id="edit-beer-button" type="submit" name="button" class="ui button">Edit beer</button>
+        </form>
       </div>
     </div>
   </div>
