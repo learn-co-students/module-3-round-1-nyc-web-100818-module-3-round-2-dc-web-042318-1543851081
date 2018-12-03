@@ -67,6 +67,8 @@ When the page loads, I should see a list of all of the beer names retrieved from
 ### Step 2 - Display Single Beer Details
 
 When I click a beer name, the application should reveal more information about that particular beer.
+1. so each beer li must have identifying attribute so we can get the additional beer data
+2. click event for the parent - the ul we identified and then identify that its an li
 See the example above for the additional information that should be displayed.
 
 * **Route:** GET `http://localhost:3000/beers/:id`
@@ -93,6 +95,9 @@ The html should look something like:
 ### Step 3 - Edit Beer Details
 
 When looking at the details of a beer, I can edit the current description of a beer. Clicking the 'Save' button will save any changes added to the description in the database.
+- need event listener for the save button on the beer
+- SUBMIT EVENT BC IT'S A FORM
+- event listeners for forms ARE ON THE FORM ITSELF
 
 To update a beer you'll need to make a PATCH request
 * **Route:** PATCH `http://localhost:3000/beers/:id`
