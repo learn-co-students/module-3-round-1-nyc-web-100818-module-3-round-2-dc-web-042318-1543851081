@@ -13,7 +13,7 @@ const editApi = (beer, beerDescription) => {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      description: beerDescription,
+      description: beerDescription
     })
   })
 }
