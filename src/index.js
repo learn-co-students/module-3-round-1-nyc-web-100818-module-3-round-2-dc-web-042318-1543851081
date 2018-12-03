@@ -27,10 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3>${data.tagline}</h3>
         <h5>first brewed: ${data.first_brewed}</h5>
         <ul>Pairs Well With</ul>
-        ${data.food_pairing.map(function(pair){
-          return `<li>${pair}</li>`
-        }).join(" ")}
-
+          ${data.food_pairing.map(function(pair){
+            return `<li>${pair}</li>`
+          }).join(" ")}
         <textarea>${data.description}</textarea>
         <button id="edit-beer" data-id="${data.id} " class="btn btn-info">Save</button>
       `
@@ -43,14 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
             showBeer(id)
           };
         })
-
       })
-      })
-
+    })
   }
-
-
-
-
   showBeers()
 });
